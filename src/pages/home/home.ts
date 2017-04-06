@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
+import { AlertController, ActionSheetController } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
@@ -10,7 +10,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class HomePage {
   songs: FirebaseListObservable<any>;
 
-  constructor(public actionSheetCtrl: ActionSheetController, public alertCtrl: AlertController, public navCtrl: NavController, af: AngularFire) {
+  constructor(public actionSheetCtrl: ActionSheetController, public alertCtrl: AlertController, af: AngularFire) {
     this.songs = af.database.list('/songs');
   }
 
